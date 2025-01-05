@@ -23,24 +23,3 @@ Finding connected components in an undirected graph is a straightforward process
 4. **Explore adjacent vertices:**  
    For every adjacent vertex `u` of the current vertex `v`:
    - If `u` has not been visited, call the BFS procedure for `u`.
-
-## Example Pseudocode
-
-```python
-def bfs(graph, start, visited):
-    queue = [start]
-    visited[start] = True
-    while queue:
-        vertex = queue.pop(0)
-        print(vertex, end=" ")
-        for neighbor in graph[vertex]:
-            if not visited[neighbor]:
-                visited[neighbor] = True
-                queue.append(neighbor)
-
-def connected_components(graph):
-    visited = [False] * len(graph)
-    for vertex in range(len(graph)):
-        if not visited[vertex]:
-            bfs(graph, vertex, visited)
-            print()  # Newline to separate components
